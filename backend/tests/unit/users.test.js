@@ -27,8 +27,12 @@ describe('Users Routes', () => {
       mockFastify[method].mockImplementation((path, ...args) => {
         const config = args[0];
         const handler = args.find((a) => typeof a === 'function');
-        if (config && config.preHandler) {handlers[`${path}_${method}_pre`] = config.preHandler;}
-        if (handler) {handlers[`${path}_${method}`] = handler;}
+        if (config && config.preHandler) {
+          handlers[`${path}_${method}_pre`] = config.preHandler;
+        }
+        if (handler) {
+          handlers[`${path}_${method}`] = handler;
+        }
       });
     };
     wrapMethod('get');
