@@ -22,6 +22,12 @@ async function authRoutes(fastify, options) {
       return reply.code(400).send({ error: 'Password must be at least 6 characters' });
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return reply.code(400).send({ error: 'Invalid email format' });
+    }
+
     try {
       // Check if username already exists
       const existingUsername = await User.findByUsername(username);
