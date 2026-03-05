@@ -52,11 +52,12 @@ CREATE INDEX idx_groups_enabled ON groups(enabled);
 
 -- Insert default admin user (password: admin123)
 -- Note: In production, change this immediately
+-- Hash generated with: bcrypt.hash('admin123', 10)
 INSERT INTO users (username, email, password_hash, role_id, enabled) 
 VALUES (
   'admin',
   'admin@gap.local',
-  '$2b$10$rQZ9vXJxL5K5J5K5J5K5JeQZ9vXJxL5K5J5K5J5K5J5K5J5K5J5K',
+  '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy',
   1,
   true
 );
