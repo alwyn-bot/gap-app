@@ -57,7 +57,7 @@ Group Assignment Portal - A role-based access control system for managing studen
 
 ```bash
 # Clone the repository
-git clone https://github.com/alwyn-bot/gap-app.git
+git clone https://github.com/alwynpan/gap-app.git
 cd gap-app
 # Install dependencies for all packages individually:
 cd backend && npm ci
